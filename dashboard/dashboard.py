@@ -29,7 +29,7 @@ with st.sidebar:
     with col1:
         st.write(' ')
     with col2:
-        st.image("https://raw.githubusercontent.com/mhdhfzz/data-analyst-dicoding/main/dashboard/logo.png"
+        st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IOWpZQH2n_ybodBfjGbyzpLIzVez6LrGhQ&s"
                  , width=100)
     with col3:
         st.write(' ')

@@ -1,6 +1,6 @@
 # E-Commerce Public Data Analysis with Python - Dicoding
 
-[E-Commerce Data Dashboard Streamlit App](https://e-commerce-data-analyst.streamlit.app/)
+[E-Commerce Data Dashboard Streamlit App](https://mmhdagungg-e-commerce-publict-data-an-dashboarddashboard-bdiabi.streamlit.app/)
 
 ## Table of Contents
 - [Overview](#overview)
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 3. **Visualization**: Run the Streamlit dashboard for interactive data exploration:
 
 ```
-cd data-analyst-dicoding/dashboard
+cd e-commerce-publict-data-analysis/dashboard
 streamlit run dashboard.py
 ```
 Access the dashboard in your web browser at `http://localhost:8501`.
