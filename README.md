@@ -1,5 +1,4 @@
 # E-Commerce Public Data Analysis with Python - Dicoding
-![E-Commerce Data Dashboard](dashboard.gif)
 
 [E-Commerce Data Dashboard Streamlit App](https://e-commerce-data-analyst.streamlit.app/)
 
@@ -23,7 +22,7 @@ This project is a data analysis and visualization project focused on e-commerce 
 ## Installation
 1. Clone this repository to your local machine:
 ```
-git clone https://github.com/mhdhfzz/data-analyst-dicoding.git
+git clone https://github.com/mmhdagungg/e-commerce-publict-data-analysis
 ```
 2. Go to the project directory
 ```
