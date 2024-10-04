@@ -21,11 +21,11 @@ This project is a data analysis and visualization project focused on e-commerce 
 ## Installation
 1. Clone this repository to your local machine:
 ```
-git clone https://github.com/mmhdagungg/e-commerce-publict-data-analysis
+git clone https://github.com/mmhdagungg/e-commerce-public-data-analyst
 ```
 2. Go to the project directory
 ```
-cd e-commerce-publict-data-analysis
+cd e-commerce-public-data-analyst
 ```
 3. Install the required Python packages by running:
 ```
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 3. **Visualization**: Run the Streamlit dashboard for interactive data exploration:
 
 ```
-cd e-commerce-publict-data-analysis/dashboard
+cd e-commerce-public-data-analyst/dashboard
 streamlit run dashboard.py
 ```
 Access the dashboard in your web browser at `http://localhost:8501`.
