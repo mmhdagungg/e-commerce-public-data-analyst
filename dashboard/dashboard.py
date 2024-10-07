@@ -95,7 +95,7 @@ ax[1].tick_params(axis='x', labelsize=12)
 
 st.pyplot(fig)
 with st.expander("Lihat Penjelasan"):
-        st.write('Produk terlaris adalah audio dan terendah adalah security dan services')
+        st.write('Produk terlaris adalah bed_bath_table dan terendah adalah security dan services')
 
 # Demografi Pelanggan
 st.subheader("Demografi Pelanggan")
