@@ -94,8 +94,46 @@ ax[1].tick_params(axis='y', labelsize=12)
 ax[1].tick_params(axis='x', labelsize=12)
 
 st.pyplot(fig)
+
+order_items_df = pd.read_csv("https://raw.githubusercontent.com/mmhdagungg/e-commerce-public-data-analyst/refs/heads/main/dashboard/df.csv")
+
+# Konversi kolom timestamp menjadi tipe datetime
+order_items_df['order_purchase_timestamp'] = pd.to_datetime(order_items_df['order_purchase_timestamp'])
+
+# Tambahkan kolom bulan dan tahun
+order_items_df['month_year'] = order_items_df['order_purchase_timestamp'].dt.to_period('M')
+
+# Konversi 'month_year' ke string agar bisa dipakai di seaborn plot
+order_items_df['month_year'] = order_items_df['month_year'].astype(str)
+
+# Kelompokkan berdasarkan kategori produk dan bulan
+sum_order_items_df_by_month = order_items_df.groupby(['product_category_name_english', 'month_year']).agg(
+    product_count=('order_item_id', 'count')
+).reset_index()
+
+# Plot penjualan per bulan untuk kategori produk tertentu
+plt.figure(figsize=(15, 8))
+
+# Misalnya kita ambil salah satu kategori, kamu bisa menggantinya dengan kategori lain
+category = "bed_bath_table"  # ganti dengan kategori lain jika diperlukan
+category_sales = sum_order_items_df_by_month[sum_order_items_df_by_month['product_category_name_english'] == category]
+
+# Membuat line plot
+sns.lineplot(x='month_year', y='product_count', data=category_sales, marker='o')
+
+# Menambahkan label dan judul
+plt.title(f'Penjualan Produk {category} per Bulan', fontsize=16)
+plt.xlabel('Bulan', fontsize=14)
+plt.ylabel('Jumlah Penjualan', fontsize=14)
+
+# Rotasi label bulan agar terbaca jelas
+plt.xticks(rotation=45)
+
+# Tampilkan plot
+plt.tight_layout()
+st.pyplot(plt)
 with st.expander("Lihat Penjelasan"):
-        st.write('Produk terlaris adalah bed_bath_table dan terendah adalah security dan services')
+        st.write("Produk yang paling banyak terjual adalah bed_bath_table dan yang paling sedikit terjual adah security_and_services. Berdasarkan grafik produk bed_bath_table, didapatkan tren yang baik terutama di bulan November 2017 mengalami kenaikan yang cukup signifikan, dengan informasi sebagai berikut perusahaan dapat meningkatkan produk bed_bath_table untuk meningkatkan revenue perusahaan")
 
 # Demografi Pelanggan
 st.subheader("Demografi Pelanggan")
@@ -118,11 +156,8 @@ with tab1:
     plt.xticks(fontsize=12)
     st.pyplot(fig)
 
-    with st.expander("Lihat Penjelasan"):
-        st.write("Berdasarkan data, jumlah customer paling banyak berada di state SP (Sao Paulo) dan terendah berada di state RR (Roraima)")
-
 with tab2:
     map_plot.plot()
 
-    with st.expander("Lihat Penjelasan"):
-        st.write('Pelanggan lebih banyak berada di Sao Paulo, Rio De Janiero, dll')
+with st.expander("Lihat Penjelasan"):
+    st.write("- Berdasarkan grafik yang ditampilkan customer terbanyak berada di State Sao Paulo yang berjumlah 40.000 dengan informasi sebagai berikut perusaahan dapat menambah jumlah stok untuk menjaga ketersediaan stok sehingga tidak kehabisan stok pada state dengan penjualan tertinggi.")
