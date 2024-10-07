@@ -1,4 +1,4 @@
-# E-Commerce Public Data Analysis with Python - Dicoding
+# E-Commerce Public Data Analysis 
 
 [E-Commerce Data Dashboard Streamlit App](https://mmhdagungg-e-commerce-public-data-ana-dashboarddashboard-3mhhqh.streamlit.app/)
 
